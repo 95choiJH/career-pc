@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik:700&display=swap');
+
+/* CSS RESET */
+::selection {background-color: #00c68e; color: #fff;}
+html,body,div,span,h1,h2,h3,h4,h5,h6,img,dl,dt,dd,ul,ol,li,p,footer,header,nav,section {margin: 0; padding: 0; border: 0; vertical-align: baseline; line-height: 1; font: inherit; font-size: 100%; font-weight: normal;}
+article,footer,header,nav,section {display: block;}
+body {line-height: 1;}
+ol,ul {padding: 0; list-style: none;}
+a {text-decoration: none; color: #fff;}
+img {vertical-align: top;}
+h3 {margin: 15px 0 35px; line-height: 1.28; letter-spacing: -.5px; font-size: 2.5em; font-weight: 500;}
+h4 {height: 85px; line-height: 1.5; letter-spacing: -.48px; font-size: 1.25em; font-weight: 500; color: #333; overflow: hidden;}
+.hidden {display: block; text-indent: -9999em;}
+.clear::after {display: block; content: ''; clear: both;}
+.container {width: 1110px; height: 100%; margin: 0 auto;}
+.category {line-height: 1.5; font-size: 1.063em; font-weight: 700; opacity: .7;}
+.contents {line-height: 1.61; letter-spacing: -.5px; font-size: 1.438em; font-weight: 300;}
+.button {display: inline-block; width: 200px; height: 60px; border: 1px solid #fff; border-radius: 30px; box-sizing: border-box; text-align: center; line-height: 60px; letter-spacing: 1px; font-size: 1.125em; font-weight: 500; transition: .25s ease;}
+.empty {display: block; width: 30px; height: 100%;}
+
+/* COMMON ELEMENTS - TYPOGRAPHY */
+body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #fff;}
+
+/* ANIMATION */
+@keyframes arrow {
+    0% {animation-timing-function: ease-out;}
+    35% {top: 35px;}
+    40% {top: 35px;}
+}
+
+@keyframes up {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide {
+  100% {
+    transform: translateY(calc(-100% + 165px));
+  }
+}
+@keyframes text_tracking {
+  0% {
+    letter-spacing: -0.5em;
+    transform: translateZ(-700px) translateY(-500px);
+    opacity: 0;
+  }
+  40% {
+    opacity: .3;
+  }
+  100% {
+    transform: translateZ(0) translateY(0);
+    opacity: .7;
+  }
+}
+
+/* HEADER */
+header {width: 100%; height: 100px; padding: 0 36px; box-sizing: border-box; transition: .3s;}
+header .logo {display: inline-block; margin: auto 0; line-height: 100px;}
+header .logo a {display: block;}
+header .logo a img {vertical-align: middle; transition: .4s;}
+header .menu {display: inline-block; padding-left: 79.5px;}
+header .menu li {float: left; padding: 0 16.5px; transition: .4s;}
+header.scroll {z-index: 2; position: fixed; background-color: #fff;}
+header.scroll .menu li a {color: #333;}
+/* VIDEO */
+video {z-index: -1; position: absolute; width: 100%; height: 100%; top: 0; object-fit: cover; overflow: hidden;}
+
+/* MAIN TITLE */
+.main_title {width: 100%; height: 100vh;}
+.main_title img {position: absolute; width: 400px; height: 130px; left:50%; top: 50%; transform: translate(-50%, -50%); opacity: .85;}
+.main_title a {position: absolute; height: 50px; left: 50%; bottom: 24px; transform: translateX(-50%);}
+.main_title span {font-size: 0.875em; font-weight: 700;}
+.main_title span::after {display: block; position: absolute; content: ''; width: 24px; height: 14px; left: 50%; top: 30px; background-image: url(images/arrow.png); background-size: cover; transform: translateX(-50%); animation: arrow 1s infinite;}
+
+/* JOIN */
+.join {z-index: 2; position: fixed; width: 220px; height: 60px; right:40px; bottom: 35px; background-color: #00C68E; border-radius: 25px; box-shadow: 0 5px 26px 0 rgba(0,0,0,.3); text-align: center; line-height: 60px; font-weight: 500; letter-spacing: 1px; transition: .3s ease;}
+.join:hover {transform: scale(1.03);}
+
+/* BANKSALAD_GROWTH - COMMON */
+#banksalad_growth .banksalad_growth_wrap {display: flex; align-items: center; height: 100%;}
+#banksalad_growth .banksalad_growth_title {width: 100%;}
+#banksalad_growth .banksalad_growth_title h2 {margin-bottom: 20px; padding-right: 230px; transform: translateY(30px); line-height: 1.28; letter-spacing: -.5px; word-break: keep-all; font-size: 2.5em; font-weight: 500; color: #333; transition: 0.4s; opacity: 0;}
+#banksalad_growth .banksalad_growth_title h2.up {animation: up .4s forwards;}
+#banksalad_growth .banksalad_growth_title p {transform: translateY(30px); line-height: 1.67; letter-spacing: -.5px; font-size: 1.375em; font-weight: 300; color: #333; transition: 0.4s; opacity: 0;}
+#banksalad_growth .banksalad_growth_title p.up {animation: up .4s .2s forwards;}
+#banksalad_growth .banksalad_growth_title span {display: block; margin-top: 10px; transform: translateY(30px); font-size: 1.063em; line-height: 1.65; color: hsla(0,0%,58.8%,.6); transition: 0.4s; opacity: 0;}
+#banksalad_growth .banksalad_growth_title span.up {animation: up .4s .4s forwards;}
+#banksalad_growth .count {z-index: 1; position: relative; width: 100%; height: 100%; padding-left: 100px; overflow: hidden;}
+#banksalad_growth .count span {line-height: 600px; font-size: 2.5em; font-weight: 700; color: #00c68e;}
+#banksalad_growth .count::before {z-index: 1; position: absolute; content: ''; left: 0; right: 0; top: -100px; bottom: -100px; margin: auto; background: linear-gradient(180deg, rgba(255,255,255) 0%, rgba(255,255,255) 30%, transparent 35%, transparent 65%, rgba(255,255,255) 70%, rgba(255,255,255) 100%);}
+#banksalad_growth .count ol {float: left; margin-top: 185px; margin-right: 1px;}
+#banksalad_growth .count ol.run {animation: slide 1.5s ease-in-out forwards;}
+#banksalad_growth .count ol li.value {margin-top: 135px; text-align: center; font-family: 'Rubik', sans-serif; font-size: 13em; color: #00c68e;}
+
+/* BANKSALAD_GROWTH - MANAGEMENT AMOUNT */
+#banksalad_growth .management_amount {height: 937px; padding: 220px 0; box-sizing: border-box;}
+
+/* BANKSALAD_GROWTH - DOWNLOAD */
+#banksalad_growth .download {height: 910px; background-color: #f8f8f8; box-sizing: border-box;}
+#banksalad_growth .dl_graph {position: relative; align-self: flex-end; margin-bottom: 220px; width: 100%;}
+#banksalad_growth .dl_graph ol {display: inline-block; padding: 0 25px;}
+#banksalad_growth .dl_graph .circle {position: absolute; bottom: 30px; width: 55px; height: 55px; margin: 0 6px 0 10px; border-radius: 55px; background-color: #c8c8c8; transition: .4s; align-self: flex-end; transform: scale(0);}
+#banksalad_growth .dl_graph .circle.scale {transform: scale(1);}
+#banksalad_growth .dl_graph .circle.current {background-color: #00c68e;}
+#banksalad_growth .dl_graph .date {padding-top: 15px;}
+#banksalad_growth .dl_graph .date span {text-align: center; font-size: 1.125em; font-weight: 400; color: #939393;}
+#banksalad_growth .dl_graph .progress_rate {display:block; margin: -35px -20px; padding-bottom: 30px; font-size: 1.688em; text-align: center; font-weight: 700; color: #333;}
+#banksalad_growth .dl_title {padding-left: 140px;}
+
+/* BANKSALAD_GROWTH - INVESTMENT AMOUNT */
+#banksalad_growth .investment_amount {height: 940px; padding: 220px 0; box-sizing: border-box;}
+
+/* OUR VALUE */
+#our_value {height: 940px; background-color: #1acc99; overflow: hidden;}
+#our_value .value_wrap {height: 100%;}
+#our_value .value_title {padding-top: 150px; text-align: center;}
+#our_value .background_text {text-align: center;}
+#our_value .background_text p {font-size: 5vw; font-weight: 700; opacity: 0;}
+#our_value .background_text p.animation {animation: text_tracking 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;}
+#our_value .value_title .button {margin: 65px 0 135px;}
+#our_value .value_title .button:hover {background-color: #fff; color: #1acc99;}
+
+/* MEET OUR PEOPLE */
+#meet_our_people {position: relative; width: 100%; height: 700px;}
+#meet_our_people .people_box {width: 100%; height: 100%; overflow: hidden;}
+#meet_our_people .people_list {height: 100%}
+#meet_our_people .people {display: table; float: left; width: 100%; height: 100%;}
+#meet_our_people .people_wrap .main {left: 0;}
+#meet_our_people .yo-han {background: url('images/pc_yohan.jpg') no-repeat top/cover;}
+#meet_our_people .yu-jin {background: url('images/pc_yujin.jpg') no-repeat top/cover;}
+#meet_our_people .in-woo {background: url('images/pc_inwoo.jpg') no-repeat top/cover;}
+#meet_our_people .jae-woong {background: url('images/pc_jaewoong.jpg') no-repeat top/cover;}
+#meet_our_people .kye-sung {background: url('images/pc_kyesung.jpg') no-repeat top/cover;}
+#meet_our_people .container {width: auto; padding: 0 20%;}
+#meet_our_people .people_title {padding: 185px 0 175px;}
+#meet_our_people .people_title .people_letter {width: 60%; margin: 0 0 30px 0; letter-spacing: -1.33px; word-break: keep-all; font-size: 2.5em;}
+#meet_our_people .people_title .people_name, #meet_our_people .people_title .people_positon {display: inline-block; font-size: 1.5em; font-weight: 300;}
+#meet_our_people .people_title .handle {padding: 10px 0; font-size: 1.063em; font-weight: 700; opacity: .7; font-size: 1.063em; font-weight: 300; opacity: .6;}
+#meet_our_people .people_title .button {margin-top: 29px;}
+#meet_our_people .people_title .button:hover {background-color: #fff; color: #333;}
+#meet_our_people .prev, #meet_our_people .next {z-index: 2; display: block; position: absolute; width: 48px; height: 28px; top: 50%; background: url(images/arrow.png) no-repeat; cursor: pointer;}
+#meet_our_people .prev {padding-left: 15px; transform: translateY(-50%) scale(0.5) rotate(90deg); left: 0;}
+#meet_our_people .next {padding-right: 15px; transform: translateY(-50%) scale(0.5) rotate(-90deg); right: 0;}
+
+/* OUR CULTURE */
+#our_culture {height: 1315px; overflow: hidden}
+#our_culture .container {height: unset; padding: 200px 0 25px;}
+#our_culture .culture_title {display: flex;}
+#our_culture .category {padding-bottom: 10px; transform: translateY(30px); letter-spacing: 1px; color: #00c68e; opacity: 0;}
+#our_culture .category.up {animation: up .4s forwards;}
+#our_culture h3 {display: inline-block; margin: 0; transform: translateY(30px); color: #333; opacity: 0;}
+#our_culture h3.up {animation: up .4s .2s forwards;}
+#our_culture .contents {display: inline-block; padding-left: 65px; transform: translateY(30px); vertical-align: top; font-size: 1.375em; color: #333; opacity: 0;}
+#our_culture .contents.up {animation: up .4s .4s forwards;}
+#our_culture .culture_back .container {padding: 0 0 97px 0;}
+#our_culture .button {margin: 15px 0; border-color: #00c68e; color: #00c68e;}
+#our_culture .button:hover {background-color: #00c68e; color: #fff;}
+#our_culture .culture_img {float: left;}
+#our_culture .culture_img img {width: 100%; padding: 0 15px; box-sizing: border-box;}
+
+/* BLOG SNAPSHOT */
+#blog_snapshot {height: 2000px; border-bottom: .5px solid rgba(34,34,34,.4);}
+#blog_snapshot .snapshot_title {padding-top: 180px;}
+#blog_snapshot .category {padding-bottom: 20px; letter-spacing: 1px; color: #00c68e; opacity: 1;}
+#blog_snapshot h3 {margin: 0; color: #333;}
+#blog_snapshot .button {margin: 75px 0; border-color: #00c68e; color: #00c68e;}
+#blog_snapshot .button:hover {background-color: #00c68e; color: #fff;}
+#blog_snapshot .blog_contents {padding: 30px 35px;}
+#blog_snapshot .blog_contents .sub_title {padding-bottom: 10px; letter-spacing: .5px; font-size: 0.75em; font-weight: 700; color: #00c68e; opacity: 1;}
+#blog_snapshot .blog_contents .post {height: 80px; margin-bottom: 40px; line-height: 1.75; letter-spacing: -.5px; font-weight: 100; color: #707070; opacity: 1; overflow: hidden;}
+#blog_snapshot .blog_contents .date {padding: 20px 0; border-top: .5px solid rgba(34,34,34,.4); font-size: 0.875em; font-weight: 100; color: #7f7f7f;}
+#blog_snapshot article {float: left; width: 350px; height: 510px; margin-right: 30px; margin-bottom: 30px; border-radius: 10px; box-shadow: 0 39px 67px 3px hsla(0,0%,67.5%,.3); transform: translateY(20%); transition: .3s ease; opacity: 0;}
+#blog_snapshot article:nth-child(3n+1) {margin-right: 0;}
+#blog_snapshot article:nth-child(3n+2).up {animation: up .7s forwards;}
+#blog_snapshot article:nth-child(3n).up {animation: up .7s .2s forwards;}
+#blog_snapshot article:nth-child(3n+1).up {animation: up .7s .4s forwards;}
+#blog_snapshot article a {display: block;}
+#blog_snapshot article img {width: 100%; height: 195px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;}
+
+/* FOOTER */
+footer .container {padding: 70px 0 140px;}
+footer .organization_menu {float: left;}
+footer .organization_menu dl {float: left; width: 190px; line-height: 2.14; font-size: .875rem;}
+footer .organization_menu dt {font-weight: 700; color: #505050;}
+footer .organization_menu dd a {color: #505050; transition: all .25s ease;}
+footer .organization_menu dd a:hover {color: #00c68e;}
+footer .organization_info {float: right; width: 445px; line-height: 2.14; letter-spacing: -.23px; font-size: .875rem; color: #b4b4b4;}
+footer .organization_info a {text-decoration: underline; color: #b4b4b4; transition: all .25s ease;}
+footer .organization_info a:hover {color: #00c68e;}
+
+/* MEDIAQUERY */
+@media (max-width: 1199px){
+  h3 {font-size: 2.125em;}
+  #banksalad_growth .banksalad_growth_title {padding: 0 15px;}
+  #banksalad_growth .banksalad_growth_title h2 {font-size: 2.125em; padding-right: 200px;}
+  #banksalad_growth .count {padding: 0 15px 0 100px;}
+  #banksalad_growth .count ol {margin-top: 135px;}
+  #banksalad_growth .count ol li.value {font-size: 11em;}
+  #banksalad_growth .count span {line-height: 510px; font-size: 1.938em;}
+  #banksalad_growth .management_amount {height: 855px;}
+  #banksalad_growth .container {max-width: 960px; margin: 0 auto; padding: 0 15px;}
+  #banksalad_growth .download {height: 828px;}
+  #banksalad_growth .dl_graph {margin-bottom: 220px; padding: 0 15px;}
+  #banksalad_growth .dl_graph ol {padding: 0 15px;}
+  #banksalad_growth .dl_graph .circle {width: 45px; height: 45px;}
+  #banksalad_growth .dl_graph .progress_rate {font-size: 1.563em;}
+  #banksalad_growth .dl_title {padding: 0 15px 0 100px;}
+  #banksalad_growth .investment_amount {height: 855px;}
+  #our_value {height: 890px;}
+  #our_culture {height: 1079px;}
+  #our_culture .container {max-width: 930px;}
+  #blog_snapshot .container {max-width: 960px; padding: 0 15px;}
+  #blog_snapshot article {width: 290px;}
+  footer .container {max-width: 960px;}
+  footer .organization_menu dl {width: 160px;}
+  footer .organization_info {width: 400px;}
+}
+@media (max-width: 990px){
+  h3 {font-size: 2em;}
+  #banksalad_growth .management_amount {height: 744px;}
+  #banksalad_growth .banksalad_growth_title {padding: 0;}
+  #banksalad_growth .banksalad_growth_title h2 {padding-right: 40px; font-size: 2em;}
+  #banksalad_growth .banksalad_growth_title p {word-break: keep-all; font-size: 1.25em;}
+  #banksalad_growth .container {max-width: 720px;}
+  #banksalad_growth .count {padding: 0 0 0 90px;}
+  #banksalad_growth .count ol {margin-top: 55px;}
+  #banksalad_growth .count ol li.value {font-size: 8.125em;}
+  #banksalad_growth .count span {line-height: 375px;}
+  #banksalad_growth .download {height: 720px;}
+  #banksalad_growth .dl_title {padding: 0 15px 0;}
+  #banksalad_growth .dl_title_box {padding-left: 100px;}
+  #banksalad_growth .dl_title p {width: 245px;}
+  #banksalad_growth .dl_graph {margin-bottom: 150px; padding: 0;}
+  #banksalad_growth .dl_graph ol {padding: 0 10px;}
+  #banksalad_growth .dl_graph .circle {width: 33px; height: 33px;}
+  #banksalad_growth .dl_graph .progress_rate {padding-bottom: 15px; font-size: 1.25em;}
+  #banksalad_growth .dl_graph .date span {font-size: 0.875em;}
+  #banksalad_growth .investment_amount {height: 744px;}
+  #our_value {height: 831px;}
+  #our_culture {height: 1053px;}
+  #our_culture .container {max-width: 720px;}
+  #our_culture h3.up {word-break: keep-all;}
+  #our_culture .contents {font-size: 1.25em;}
+  #blog_snapshot {height: 2579px;}
+  #blog_snapshot .container {max-width: 720px;}
+  #blog_snapshot article {width: 330px;}
+  #blog_snapshot article:nth-child(3n+1) {margin-right: 30px;}
+  #blog_snapshot article:nth-child(2n+1) {margin-right: 0;}
+  #blog_snapshot article:nth-child(2n).up {animation: up .7s forwards;}
+  #blog_snapshot article:nth-child(2n+1).up {animation: up .7s .2s forwards;}
+  footer {height: 495px;}
+  footer .container {max-width: 720px; padding: 70px 0 0;}
+  footer .organization_info {width: 180px;}
+}
+@media (max-width: 770px){
+  .main_title a {display: none;}
+  #banksalad_growth .management_amount {height: 785px; padding: 60px 0;}
+  #banksalad_growth .container {width: 100%; padding: 0;}
+  #banksalad_growth .banksalad_growth_wrap {flex-direction: column;}
+  #banksalad_growth .banksalad_growth_title {width: 100%; text-align: center; box-sizing: border-box;}
+  #banksalad_growth .banksalad_growth_title h2 {padding: 0; font-size: 1.75em;}
+  #banksalad_growth .count {width: auto; height: 480px; padding: 0;}
+  #banksalad_growth .count ol {margin-top: 160px;}
+  #banksalad_growth .count ol li.value {font-size: 25vw;}
+  #banksalad_growth .count span {line-height: 595px;}
+  #banksalad_growth .download {height: 902px; padding: 90px 0;}
+  #banksalad_growth .download_wrap {flex-direction: column-reverse; justify-content: space-between;}
+  #banksalad_growth .dl_title_box {padding-left: 0;} 
+  #banksalad_growth .dl_title p {width: auto;}
+  #banksalad_growth .dl_graph {width: auto; margin-bottom: 0; padding: 0 6vw; align-self: auto; box-sizing: border-box;}
+  #banksalad_growth .dl_graph .circle {width: 8vw; height: 8vw; margin-left: 2.5vw; margin-right: 0;}
+  #banksalad_growth .dl_graph .progress_rate {margin: -60px -40px; font-size: 6vw;}
+  #banksalad_growth .dl_graph .date span {font-size: 3.5vw;}
+  #banksalad_growth .investment_amount {height: 779px; padding: 60px 0;}
+  #our_value {height: 840px;}
+  #meet_our_people {height: 530px;}
+  #meet_our_people .container {padding: 30px;}
+  #meet_our_people .people_title {padding: 0}
+  #meet_our_people .people_title .category {padding-bottom: 10px; font-size: .75em; font-weight: 500;}
+  #meet_our_people .people_title .people_letter {display: none;}
+  #meet_our_people .people_title .people_name {display: block; line-height: 1.33; font-weight: 500;}
+  #meet_our_people .people_title .people_positon {display: block; line-height: 1.5; font-size: .75em; opacity: .7;}
+  #meet_our_people .people_title .handle {display: none;}
+  #meet_our_people .people_title .interview {text-align: center;}
+  #meet_our_people .people_title .interview .button {width: 140px; height: 48px; margin-top: 300px; line-height: 48px; font-size: .875em;}
+  #meet_our_people .people_arrow {display: none;}
+  #our_culture {height: 770px;}
+  #our_culture .container {max-width: 100%; padding: 50px 0 0px; text-align: center;}
+  #our_culture .culture_title {flex-direction: column;}
+  #our_culture .contents {padding: 0;}
+  #our_culture .category {font-size: .875em; font-weight: 400;}
+  #our_culture h3 {font-size: 1.75em; padding-bottom: 20px;}
+  #our_culture .culture_back {display: flex; flex-direction: column-reverse; padding-top: 60px;}
+  #our_culture .culture_back .button {width: 140px; height: 48px; margin-top: 60px; line-height: 48px; font-size: .875em;}
+  #blog_snapshot {height: 2048px; padding: 60px 0 100px; box-sizing: border-box;}
+  #blog_snapshot .container {max-width: 100%; box-sizing: border-box;}
+  #blog_snapshot .snapshot_title {padding: 0; text-align: center;}
+  #blog_snapshot .category {font-size: .875em; font-weight: 400; padding-bottom: 10px;}
+  #blog_snapshot h3 {font-size: 1.75em; padding-bottom: 20px;}
+  #blog_snapshot .button {width: 140px; height: 48px; margin-top: 60px; line-height: 48px; font-size: .875em;}
+  #blog_snapshot article {width: 48.5%; margin-right: 15px; margin-bottom: 30px;}
+  #blog_snapshot article:nth-child(3n+1) {margin-right: 15px;}
+  #blog_snapshot article:nth-child(2n+1) {margin-right: 0;}
+  footer .container {width: 540px; padding: 69px 48px 110px;}
+  footer .organization_menu {float: none;}
+  footer .organization_menu dl, footer .organization_info {width: 100%;}
+  footer .organization_menu dl {font-size: .938em; padding-bottom: 40px;}
+}
+
+@media (max-width: 635px){
+  .category {font-size: .75em!important;}
+  h3 {font-size: 1.5em!important; margin: 10px 0;}
+  .contents {font-size: 1em!important;}
+  .button {width: 140px; height: 48px; line-height: 48px; font-size: .875em;}
+  h4 {height: 48px; padding-bottom: 15px; font-size: 1em;}
+
+  header {height: 58px; padding: 0 18px;}
+  header .logo {line-height: 58px;}
+  header .logo a img {height: 27px;}
+  header .menu {float: right; padding: 0; line-height: 58px;}
+  header .menu li {font-size: 0.75em; padding: 0 5.5px;}
+  .main_title img {width: calc(100% - 60px); height: 100%;}
+  .join {width: calc(100% - 64px); right: 0; margin: 0 32px;}
+  #banksalad_growth .management_amount {height: 489px;}
+  #banksalad_growth .banksalad_growth_title h2 {font-size: 1.5em;}
+  #banksalad_growth .banksalad_growth_title p {font-size: 1em;}
+  #banksalad_growth .banksalad_growth_title span {font-size: .75em;}
+  #banksalad_growth .count span {line-height: 310px;}
+  #banksalad_growth .count ol {margin-top: 20px;}
+  #banksalad_growth .download {height: 800px;}
+  #banksalad_growth .dl_graph .progress_rate {margin: -50px -40px;}
+  #banksalad_growth .investment_amount {height: 487px}
+  #our_value {height: 475px;}
+  #our_value .value_title {padding-top: 50px;}
+  #our_value .value_title .button {margin: 30px 0 85px;}
+  #our_culture {height: 604px;}
+  #blog_snapshot {height: 2926px;}
+  #blog_snapshot .container {padding: 0 35px;}
+  #blog_snapshot .button {margin-top: 15px;}
+  #blog_snapshot article {width: 100%; height: 400px; margin-right: 0; margin-bottom: 20px;}
+  #blog_snapshot article img {height: 147px;}
+  #blog_snapshot .blog_contents {padding: 16px 20px;}
+  #blog_snapshot .blog_contents .sub_title {font-size: .875em; font-weight: 500; padding-bottom: 15px;}
+  #blog_snapshot .blog_contents .post {margin-bottom: 20px; font-size: .75em;}
+  #blog_snapshot .blog_contents .date {padding-top: 14px; padding-bottom: 0; font-size: .75em;}
+  footer {height: 785px;}
+  footer .container {width: 100%; padding: 34px 45px 130px; box-sizing: border-box;}
+  footer .organization_menu dl, footer .organization_info {word-break: keep-all;}
+}
+
+@media (max-width: 350px){
+  header .logo a img {height: 23px;}
+  header .menu li {font-size: 0.65em;}
+  #banksalad_growth .dl_graph .progress_rate {margin: -40px -40px;}
+}
+
